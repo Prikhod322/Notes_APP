@@ -67,8 +67,8 @@ namespace WinFormsApp5
             }
             else
             {
-                //oString = $"Delete FROM [NOTE] WHERE ROW_NUMBER={listBox1.SelectedIndex + 1}";
-                oString = $"Delete [NOTE] * From( Select Row_Number() Over(Order By ID) As RowNum, * From [NOTE]) [NOTE] Where RowNum = {listBox1.SelectedIndex + 1}";
+                oString = $"Delete FROM [NOTE] WHERE ID={listBox1.SelectedIndex + 1}";
+                
                 oCmd = new SqlCommand(oString, connection);
                 oReader = oCmd.ExecuteReader();
 
